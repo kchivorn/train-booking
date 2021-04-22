@@ -1,0 +1,14 @@
+{
+  "files.associations": {
+    "*.erb": "erb",
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.formatOnSave": true,
+  "solargraph.diagnostics": true,
+  "terminal.explorerKind": "external",
+  "html.format.templating": true,
+  "solargraph.formatting": true,
+  "html.format.contentUnformatted": "pre,code,textarea"
+}
