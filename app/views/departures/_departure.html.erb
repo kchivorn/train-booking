@@ -1,0 +1,10 @@
+<tr class="<%= departure.late ? 'late' : '' %>">
+  <th scope="row"><%= departure.route %></th>
+  <td><%= format_time(departure.departure_time.localtime) %></td>
+  <td><%= format_time(departure.arrival_time.localtime) %></td>
+  <td><%= departure.cost_in_dollars %></td>
+  <td><%= departure.seats_available %></td>
+  <td><%= button_to 'Book', departure_book_path(departure.id),
+    class: 'btn btn-primary btn-sm', data: { confirm: "Book the ticket now?" } %>
+  </td>
+</tr>
