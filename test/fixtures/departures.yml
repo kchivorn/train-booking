@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route: MyString
+  departure_time: 2021-04-22 09:26:21
+  arrival_time: 2021-04-22 09:26:21
+  cost_in_cents: 1
+  seats_available: 1
+
+two:
+  route: MyString
+  departure_time: 2021-04-22 09:26:21
+  arrival_time: 2021-04-22 09:26:21
+  cost_in_cents: 1
+  seats_available: 1
