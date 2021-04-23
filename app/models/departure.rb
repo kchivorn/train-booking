@@ -4,6 +4,8 @@ class Departure < ApplicationRecord
 
   has_many :tickets
 
+  validates :route, :departure_time, :arrival_time, :cost_in_cents, :seats_available, presence: true
+
   scope :available, -> { where('departure_time > ? and seats_available > 0', 2.hours.from_now) }
 
   def late

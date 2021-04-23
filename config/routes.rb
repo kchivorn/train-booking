@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy'
 
-  resources :departure, only: [:post] do
+  resources :departures, only: %i[post index] do
     post 'book', to: 'tickets#create'
   end
 
