@@ -1,4 +1,6 @@
 # Train booking app
+App to tracking and display train timetable and users who bought the ticket
+
 Sample app: https://morning-depths-20937.herokuapp.com/
 
 # Rake Tasks
