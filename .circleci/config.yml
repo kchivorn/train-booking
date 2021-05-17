@@ -10,13 +10,13 @@ jobs:
     steps:
       - checkout
       - run: echo 'hello'
-  print_world:
+  print_name:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
     executor: ruby/default
     steps:
       - checkout
-      - run: echo 'world'
+      - run: echo $PROJECT_OWNER
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
@@ -32,6 +32,6 @@ workflows:
   one_and_two:
     jobs:
       - print_hello
-      - print_world:
+      - print_name:
           requires:
             - print_hello
