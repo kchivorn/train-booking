@@ -16,7 +16,9 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
-      - run: echo $PROJECT_OWNER
+      - run:
+            command: |
+              echo $PROJECT_OWNER
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
