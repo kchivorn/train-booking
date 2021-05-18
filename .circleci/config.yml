@@ -9,7 +9,7 @@ jobs:
     executor: ruby/default
     steps:
       - checkout
-      - run: echo 'Money flows to me easily and effortlessly' > output.txt
+      - run: echo 'Money flows to me easily and effortlessly' > ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
