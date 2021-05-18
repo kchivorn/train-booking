@@ -1,27 +1,26 @@
 version: 2.1
+command:
+  print_pipeline_id:
+    description: "command to print circleci workflow id"
+    parameters:
+      project_name:
+        type: string
+        default: "train booking"
+    steps:
+      - run: echo $CIRCLE_WORKFLOW_ID in project << parameters.project_name >>
+
 orbs:
   ruby: circleci/ruby@0.1.2 
 
 jobs:
-  save_hello_world_output:
+  print_workflow:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
     executor: ruby/default
     steps:
-      - checkout
-      - run: echo 'Money flows to me easily and effortlessly' > ~/output.txt
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - output.txt
-  print_output_file:
-    docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    executor: ruby/default
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run: cat ~/output.txt
+      - print_pipeline_id:
+          project_name: "tttt"
+          
   build:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
@@ -36,7 +35,5 @@ workflows:
   version: 1
   one_and_two:
     jobs:
-      - save_hello_world_output
-      - print_output_file:
-          requires:
-            - save_hello_world_output
+      - print_workflow
+      
