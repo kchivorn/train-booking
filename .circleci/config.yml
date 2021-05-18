@@ -18,8 +18,7 @@ jobs:
       - image: circleci/ruby:2.6.3-stretch-node
     executor: ruby/default
     steps:
-      - print_pipeline_id:
-          project_name: "tttt"
+      - print_pipeline_id
           
   build:
     docker:
