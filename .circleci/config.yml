@@ -19,17 +19,11 @@ jobs:
     executor: ruby/default
     steps:
       - print_pipeline_id
-          
-  build:
-    docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    executor: ruby/default
-    steps:
-      - checkout
+      - run: bash 'return 1'
       - run:
-          name: Which bundler?
-          command: bundle -v
-      - ruby/bundle-install
+          name: 'Run on fail'
+          command: echo 'Project failed'
+          when: on_fail 
 workflows:
   version: 1
   one_and_two:
