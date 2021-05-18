@@ -19,7 +19,7 @@ jobs:
     executor: ruby/default
     steps:
       - print_pipeline_id
-      - run: bash 'return 1'
+      - run: return 1
       - run:
           name: 'Run on fail'
           command: echo 'Project failed'
