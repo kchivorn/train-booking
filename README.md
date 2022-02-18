@@ -2,6 +2,8 @@
 App to tracking and display train timetable and users who bought the ticket
 
 Sample app: https://morning-depths-20937.herokuapp.com/
+Login with an email.
+Time table needs to be updated for it to display in the current time.
 
 # Rake Tasks
 1- Generate train timetables and save into table departures
